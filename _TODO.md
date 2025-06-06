@@ -5,11 +5,11 @@
 - [x] Setup monorepo
 - [x] Set up Shopify Products
 - [x] Organize components
+- [x] Set up Shopify Headless w/ headless theme
+- [x] Link up Sanity w/ Shopify
 
 ## Current
 
-- [ ] Set up Shopify Headless w/ headless theme
-- [ ] Link up Sanity w/ Shopify
 - [ ] Set up Typegen
 - [ ] Set up Visual Editing
 - [ ] Set up i18n and multicurrency

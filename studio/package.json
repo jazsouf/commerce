@@ -5,8 +5,11 @@
   "main": "package.json",
   "license": "UNLICENSED",
   "scripts": {
+    "extract-types": "sanity schema extract --enforce-required-fields",
+    "predev": "pnpm run extract-types",
     "dev": "sanity dev",
     "start": "sanity start",
+    "prebuild": "pnpm run extract-types",
     "build": "sanity build",
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy"
@@ -15,29 +18,28 @@
     "sanity"
   ],
   "dependencies": {
-    "@sanity/asset-utils": "^1.3.0",
-    "@sanity/color-input": "^3.0.2",
-    "@sanity/icons": "^2.11.0",
-    "@sanity/ui": "^2.0.0",
+    "@sanity/asset-utils": "^2.2.1",
+    "@sanity/color-input": "^4.0.3",
+    "@sanity/icons": "^3.7.0",
+    "@sanity/ui": "^2.15.18",
     "@sanity/vision": "^3.91.0",
     "lodash.get": "^4.4.2",
-    "pluralize-esm": "^9.0.2",
+    "pluralize-esm": "^9.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sanity": "^3.91.0",
     "sanity-plugin-hotspot-array": "^1.0.1",
-    "sanity-plugin-media": "^2.0.5",
     "slug": "^8.2.2",
-    "styled-components": "^6.1.15"
+    "styled-components": "^6.1.18"
   },
   "devDependencies": {
-    "@portabletext/types": "^2.0.2",
+    "@portabletext/types": "^2.0.13",
     "@sanity/eslint-config-studio": "^5.0.2",
-    "@types/lodash.get": "^4.4.7",
+    "@types/lodash.get": "^4.4.9",
     "@types/react": "^18.0.25",
-    "@types/slug": "^5.0.3",
-    "eslint": "^9.9.0",
-    "prettier": "^3.0.2",
-    "typescript": "^5.1.6"
+    "@types/slug": "^5.0.9",
+    "eslint": "^9.28.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
   }
 }
