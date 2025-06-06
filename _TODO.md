@@ -1,8 +1,13 @@
 # TODO
 
+## Done
+
+- [x] Setup monorepo
+- [x] Set up Shopify Products
+- [x] Organize components
+
 ## Current
 
-- [ ] Set up Shopify Products
 - [ ] Set up Shopify Headless w/ headless theme
 - [ ] Link up Sanity w/ Shopify
 - [ ] Set up Typegen
@@ -30,7 +35,3 @@
 - [ ] Redirects from CMS
 - [ ] Analytics
 - [ ] Responsible Images
-
-## Done
-
-- [x] Setup monorepo
