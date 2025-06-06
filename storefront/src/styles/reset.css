@@ -1,0 +1,153 @@
+/* Modern CSS Reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-style: solid;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  line-height: 1;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+label {
+  line-height: 1;
+  text-box: trim-both cap alphabetic;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+  text-box: trim-both cap alphabetic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+p {
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+  padding: 1rem;
+  font-size: 2rem;
+  text-transform: none;
+  text-box: trim-both cap alphabetic;
+}
+
+.scroll-el > p {
+  font-size: 3rem;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  color: currentColor;
+}
+
+button,
+select {
+  text-transform: none;
+  text-box: trim-both cap alphabetic;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1; /* 1 */
+  text-box: trim-both cap alphabetic;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+:disabled {
+  cursor: default;
+}
+
+#root {
+  isolation: isolate;
+}
+
+[hidden]:where(:not([hidden="until-found"])) {
+  display: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

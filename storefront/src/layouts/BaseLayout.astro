@@ -1,21 +1,24 @@
 ---
+import { Head } from "astro-capo";
 import { ClientRouter } from "astro:transitions"
+import "../styles/global.css";
+import "../styles/reset.css";
 
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
+	<Head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
-	</head>
+		<ClientRouter/>
+	</Head>
 	<body>
 		<slot />
 	</body>
-<ClientRouter/>
 </html>
 
 <style>
