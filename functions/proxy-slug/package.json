@@ -1,0 +1,9 @@
+{
+  "name": "proxy-slug",
+  "type": "module",
+  "main": "index.ts",
+  "dependencies": {
+    "@sanity/functions": "1.0.2",
+    "@sanity/client": "^7.5.0"
+  }
+}

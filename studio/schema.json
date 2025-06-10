@@ -2941,6 +2941,14 @@
         },
         "optional": true
       },
+      "slugg": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "inline",
+          "name": "proxyString"
+        },
+        "optional": true
+      },
       "colorTheme": {
         "type": "objectAttribute",
         "value": {

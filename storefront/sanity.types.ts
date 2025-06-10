@@ -93,8 +93,8 @@ export type Settings = {
 export type Spot = {
   _type: "spot";
   productWithVariant?: ProductWithVariant;
-  x?: number;
-  y?: number;
+  x: number;
+  y: number;
 };
 
 export type ProxyString = string;
@@ -114,7 +114,7 @@ export type ShopifyProductVariant = {
   _type: "shopifyProductVariant";
   createdAt?: string;
   updatedAt?: string;
-  status?: "active" | "archived" | "draft";
+  status: "active" | "archived" | "draft";
   isDeleted?: boolean;
   title?: string;
   sku?: string;
@@ -133,7 +133,7 @@ export type ShopifyProductVariant = {
 
 export type ProductReference = {
   _type: "productReference";
-  productWithVariant?: ProductWithVariant;
+  productWithVariant: ProductWithVariant;
 };
 
 export type ProductHotspots = Array<{
@@ -142,10 +142,10 @@ export type ProductHotspots = Array<{
 
 export type Products = {
   _type: "products";
-  products?: Array<{
+  products: Array<{
     _key: string;
   } & ProductReference>;
-  layout?: "card" | "pill";
+  layout: "card" | "pill";
 };
 
 export type PriceRange = {
@@ -164,7 +164,7 @@ export type Option = {
 
 export type NotFoundPage = {
   _type: "notFoundPage";
-  title?: string;
+  title: string;
   body?: string;
   collection?: {
     _ref: string;
@@ -213,7 +213,7 @@ export type Instagram = {
 
 export type ImageWithProductHotspots = {
   _type: "imageWithProductHotspots";
-  image?: {
+  image: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -231,7 +231,7 @@ export type ImageWithProductHotspots = {
 
 export type ImageFeature = {
   _type: "imageFeature";
-  image?: {
+  image: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -254,11 +254,11 @@ export type ImageFeature = {
 
 export type Images = {
   _type: "images";
-  imageFeatures?: Array<{
+  imageFeatures: Array<{
     _key: string;
   } & ImageFeature>;
   fullWidth?: boolean;
-  verticalAlign?: "top" | "center" | "bottom";
+  verticalAlign: "top" | "center" | "bottom";
 };
 
 export type ImageCallToAction = {
@@ -280,8 +280,8 @@ export type Grid = {
 
 export type GridItem = {
   _type: "gridItem";
-  title?: string;
-  image?: {
+  title: string;
+  image: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -293,7 +293,7 @@ export type GridItem = {
     crop?: SanityImageCrop;
     _type: "image";
   };
-  body?: PortableTextSimple;
+  body: PortableTextSimple;
 };
 
 export type FooterSettings = {
@@ -308,7 +308,7 @@ export type FooterSettings = {
 
 export type CustomProductOptionSize = {
   _type: "customProductOption.size";
-  title?: string;
+  title: string;
   sizes?: Array<{
     _key: string;
   } & CustomProductOptionSizeObject>;
@@ -316,14 +316,14 @@ export type CustomProductOptionSize = {
 
 export type CustomProductOptionSizeObject = {
   _type: "customProductOption.sizeObject";
-  title?: string;
-  width?: number;
-  height?: number;
+  title: string;
+  width: number;
+  height: number;
 };
 
 export type CustomProductOptionColor = {
   _type: "customProductOption.color";
-  title?: string;
+  title: string;
   colors?: Array<{
     _key: string;
   } & CustomProductOptionColorObject>;
@@ -331,8 +331,8 @@ export type CustomProductOptionColor = {
 
 export type CustomProductOptionColorObject = {
   _type: "customProductOption.colorObject";
-  title?: string;
-  color?: Color;
+  title: string;
+  color: Color;
 };
 
 export type CollectionRule = {
@@ -344,7 +344,7 @@ export type CollectionRule = {
 
 export type CollectionReference = {
   _type: "collectionReference";
-  collection?: {
+  collection: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
@@ -363,7 +363,7 @@ export type CollectionLinks = Array<{
 
 export type CollectionGroup = {
   _type: "collectionGroup";
-  title?: string;
+  title: string;
   collectionLinks?: CollectionLinks;
   collectionProducts?: {
     _ref: string;
@@ -375,15 +375,15 @@ export type CollectionGroup = {
 
 export type CallToAction = {
   _type: "callToAction";
-  layout?: "left" | "right";
-  title?: string;
+  layout: "left" | "right";
+  title: string;
   portableText?: string;
   link?: Array<{
     _key: string;
   } & LinkInternal | {
     _key: string;
   } & LinkExternal>;
-  content?: Array<{
+  content: Array<{
     asset?: {
       _ref: string;
       _type: "reference";
@@ -402,7 +402,7 @@ export type CallToAction = {
 
 export type Callout = {
   _type: "callout";
-  text?: string;
+  text: string;
   link?: Array<{
     _key: string;
   } & LinkInternal | {
@@ -419,15 +419,15 @@ export type Accordion = {
 
 export type AccordionGroup = {
   _type: "accordionGroup";
-  title?: string;
-  body?: PortableTextSimple;
+  title: string;
+  body: PortableTextSimple;
 };
 
 export type LinkProduct = {
   _type: "linkProduct";
-  productWithVariant?: ProductWithVariant;
-  linkAction?: "link" | "addToCart" | "buyNow";
-  quantity?: number;
+  productWithVariant: ProductWithVariant;
+  linkAction: "link" | "addToCart" | "buyNow";
+  quantity: number;
 };
 
 export type ProductWithVariant = {
@@ -448,7 +448,7 @@ export type ProductWithVariant = {
 
 export type LinkInternal = {
   _type: "linkInternal";
-  reference?: {
+  reference: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
@@ -480,6 +480,7 @@ export type Product = {
   hidden?: string;
   titleProxy?: ProxyString;
   slugProxy?: ProxyString;
+  slugy?: ProxyString;
   colorTheme?: {
     _ref: string;
     _type: "reference";
@@ -525,8 +526,8 @@ export type Page = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
-  slug?: Slug;
+  title: string;
+  slug: Slug;
   colorTheme?: {
     _ref: string;
     _type: "reference";
@@ -674,14 +675,14 @@ export type ColorTheme = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
-  text?: Color;
-  background?: Color;
+  title: string;
+  text: Color;
+  background: Color;
 };
 
 export type LinkExternal = {
   _type: "linkExternal";
-  url?: string;
+  url: string;
   newWindow?: boolean;
 };
 
@@ -830,7 +831,7 @@ export type Geopoint = {
 
 export type Slug = {
   _type: "slug";
-  current?: string;
+  current: string;
   source?: string;
 };
 

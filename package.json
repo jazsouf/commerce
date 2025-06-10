@@ -16,7 +16,8 @@
   },
   "workspaces": [
     "storefront",
-    "studio"
+    "studio",
+    "functions/proxy-slug"
   ],
   "engines": {
     "node": ">=20.0.0",

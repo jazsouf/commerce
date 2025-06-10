@@ -1,0 +1,15 @@
+{
+  "blueprintVersion": "2024-10-01",
+  "resources": [
+    {
+      "name": "proxy-slug",
+      "src": "functions/proxy-slug",
+      "type": "sanity.function.document",
+      "event": {
+        "on": ["publish"],
+        "filter": "_type == 'product' && slug.current != store.slug.current",
+        "projection": "_id, store, slug"
+      }
+    }
+  ]
+}
