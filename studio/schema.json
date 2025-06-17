@@ -2941,11 +2941,11 @@
         },
         "optional": true
       },
-      "slugg": {
+      "slug": {
         "type": "objectAttribute",
         "value": {
           "type": "inline",
-          "name": "proxyString"
+          "name": "slug"
         },
         "optional": true
       },
@@ -3539,6 +3539,14 @@
         "value": {
           "type": "inline",
           "name": "proxyString"
+        },
+        "optional": true
+      },
+      "slug": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "inline",
+          "name": "slug"
         },
         "optional": true
       },

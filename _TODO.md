@@ -7,10 +7,10 @@
 - [x] Organize components
 - [x] Set up Shopify Headless w/ headless theme
 - [x] Link up Sanity w/ Shopify
+- [x] Set up Typegen
 
 ## Current
 
-- [ ] Set up Typegen
 - [ ] Set up Visual Editing
 - [ ] Set up i18n and multicurrency
 - [ ] Draft [schema](https://schema.club)

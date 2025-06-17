@@ -42,6 +42,7 @@ export const productType = defineType({
       name: "slug",
       title: "Slug",
       type: "slug",
+      hidden: true,
     }),
     defineField({
       name: "colorTheme",
