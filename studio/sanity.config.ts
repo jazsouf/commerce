@@ -22,7 +22,9 @@ export default defineConfig({
   plugins: [
     structureTool({ structure }),
     presentationTool({
-      previewUrl: location.origin,
+      previewUrl: isDev
+        ? "http://localhost:4321"
+        : "https://preview.commerce-jazsouf.netlify.app",
     }),
     colorInput(),
     imageHotspotArrayPlugin(),
