@@ -14,15 +14,26 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "astro-capo": "^0.0.1",
+    "@astrojs/netlify": "^6.4.0",
+    "@astrojs/react": "^4.3.0",
+    "@nanostores/persistent": "^1.0.0",
     "@sanity/astro": "^3.2.6",
-    "@sanity/client": "^7.5.0",
+    "@sanity/client": "^7.6.0",
     "@sanity/image-url": "^1.1.0",
-    "astro": "^5.9.0",
-    "nanostores": "^1.0.1",
+    "@shopify/hydrogen-react": "^2025.5.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "astro": "^5.9.4",
+    "astro-capo": "^0.0.1",
     "astro-portabletext": "^0.11.1",
-    "sanity": "^3.91.0",
+    "groq": "^3.92.0",
+    "groqd": "^1.7.1",
+    "nanostores": "^1.0.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sanity": "^3.92.0",
+    "typescript": "^5.8.3",
     "vite": "^6.3.5",
-    "typescript": "^5.8.3"
+    "zod": "^3.25.67"
   }
 }

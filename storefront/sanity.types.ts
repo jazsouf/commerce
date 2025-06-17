@@ -480,7 +480,7 @@ export type Product = {
   hidden?: string;
   titleProxy?: ProxyString;
   slugProxy?: ProxyString;
-  slugy?: ProxyString;
+  slug?: Slug;
   colorTheme?: {
     _ref: string;
     _type: "reference";

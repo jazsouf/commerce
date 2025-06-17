@@ -1,11 +1,25 @@
 ---
 
+import SanityLive from '../components/shared/SanityLive.astro';
+import { sanityFetch } from '../data/sanity/live';
 import BaseLayout from '../layouts/BaseLayout.astro';
-
+import {defineQuery} from 'groq'
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+export const prerender = false
+
+const url = new URL(Astro.request.url)
+
+const INDEX_QUERY = defineQuery(
+  `*[_type == "home"][0]{title}`,
+)
+
+const lastLiveEventId = url.searchParams.get('lastLiveEventId')
+const {data, tags} = await sanityFetch({query: INDEX_QUERY, params: {slug}, lastLiveEventId})
+const title = data?.title || 'Astro'
+
 ---
 
-<BaseLayout>
-
+<BaseLayout lastLiveEventId={lastLiveEventId} title={title}>
+{Array.isArray(tags) && tags.length > 0 && <SanityLive tags={tags} />}
 </BaseLayout>
