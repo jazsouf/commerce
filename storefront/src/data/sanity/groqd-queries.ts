@@ -1,7 +1,13 @@
 import { z } from "groqd";
 import { q } from "./groqd-client";
 
-const productsQuery = (
+export const homePageQuery = (
+  q.star.filterByType("home").slice(0).project(sub=> ({
+
+  }))
+)
+
+export const productsQuery = (
    q.star
     .filterByType("product")
     .order("store.createdAt asc")
@@ -12,5 +18,4 @@ const productsQuery = (
         minVariantPrice: z.number().nullish(),
       }).nullish()),
     }))
-
 );
