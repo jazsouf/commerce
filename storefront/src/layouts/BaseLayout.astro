@@ -8,13 +8,17 @@ import "../styles/reset.css";
 
 interface Props {
   title: string
+  description?: string
 }
-
-const { title } = Astro.props
-
 
 const visualEditingEnabled =
   import.meta.env.PUBLIC_SANITY_VISUAL_EDITING_ENABLED == "true";
+
+const defaultDesc =
+  "A fully featured Commerce starter with Astro, Sanity and Shopify";
+
+
+const { title, description = defaultDesc } = Astro.props;
 ---
 
 <!doctype html>
@@ -25,6 +29,7 @@ const visualEditingEnabled =
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta name="description" content={description} />
 		<ClientRouter/>
 	</Head>
 	<body>

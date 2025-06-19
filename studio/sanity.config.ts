@@ -10,18 +10,17 @@ import { imageHotspotArrayPlugin } from "sanity-plugin-hotspot-array";
 import { customDocumentActions } from "./plugins/customDocumentActions";
 import Navbar from "./components/studio/Navbar";
 
-const devOnlyPlugins = [visionTool()];
+const devOnlyPlugins = [visionTool({ title: "API" })];
 
 export default defineConfig({
-  name: "default",
+  name: "commerce",
   title: "commerce",
-
   projectId: "edrheg39",
   dataset: "production",
-
   plugins: [
     structureTool({ structure }),
     presentationTool({
+      title: "Live Preview",
       previewUrl: isDev
         ? "http://localhost:4321"
         : "https://preview.commerce-jazsouf.netlify.app",

@@ -8,10 +8,10 @@
 - [x] Set up Shopify Headless w/ headless theme
 - [x] Link up Sanity w/ Shopify
 - [x] Set up Typegen
+- [x] Set up Visual Editing
 
 ## Current
 
-- [ ] Set up Visual Editing
 - [ ] Set up i18n and multicurrency
 - [ ] Draft [schema](https://schema.club)
 - [ ] Set up groqd queries
