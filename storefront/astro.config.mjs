@@ -18,4 +18,8 @@ export default defineConfig({
     // `false` if you want to ensure fresh data
     apiVersion: "2025-06-06", // Set to date of setup to use the latest API version
   }), react()],
+  i18n: {
+      locales: ["fr", "en"],
+      defaultLocale: "en",
+    }
 });
