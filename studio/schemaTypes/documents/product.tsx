@@ -52,7 +52,7 @@ export const productType = defineType({
     }),
     defineField({
       name: "body",
-      type: "portableText",
+      type: "internationalizedArrayPortableTextSimple",
       group: "editorial",
     }),
     defineField({

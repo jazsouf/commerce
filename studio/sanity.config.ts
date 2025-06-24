@@ -7,6 +7,8 @@ import { presentationTool } from "sanity/presentation";
 import { visionTool } from "@sanity/vision";
 import { colorInput } from "@sanity/color-input";
 import { imageHotspotArrayPlugin } from "sanity-plugin-hotspot-array";
+import { documentInternationalization } from "@sanity/document-internationalization";
+import { internationalizedArray } from "sanity-plugin-internationalized-array";
 import { customDocumentActions } from "./plugins/customDocumentActions";
 import Navbar from "./components/studio/Navbar";
 
@@ -34,6 +36,13 @@ export default defineConfig({
         client.fetch(`*[_type == "locale"]{"id": tag, "title":name}`),
       // define schema types using document level localization
       schemaTypes: ["page"],
+    }),
+    internationalizedArray({
+      // Use client to fetch locales or import from local locale file
+      languages: (client) =>
+        client.fetch(`*[_type == "locale"]{"id": tag, "title":name}`),
+      // Define field types to localize as-needed
+      fieldTypes: ["string", "text", "portableTextSimple"],
     }),
     ...(isDev ? devOnlyPlugins : []),
   ],
