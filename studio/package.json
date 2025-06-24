@@ -21,6 +21,7 @@
     "@sanity/asset-utils": "^2.2.1",
     "@sanity/client": "^7.5.0",
     "@sanity/color-input": "^4.0.3",
+    "@sanity/document-internationalization": "^3.3.2",
     "@sanity/icons": "^3.7.0",
     "@sanity/ui": "^2.15.18",
     "@sanity/vision": "^3.91.0",

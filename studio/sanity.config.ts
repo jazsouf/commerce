@@ -28,6 +28,13 @@ export default defineConfig({
     colorInput(),
     imageHotspotArrayPlugin(),
     customDocumentActions(),
+    documentInternationalization({
+      // fetch locales from Content Lake or load from your locale file
+      supportedLanguages: (client) =>
+        client.fetch(`*[_type == "locale"]{"id": tag, "title":name}`),
+      // define schema types using document level localization
+      schemaTypes: ["page"],
+    }),
     ...(isDev ? devOnlyPlugins : []),
   ],
 
