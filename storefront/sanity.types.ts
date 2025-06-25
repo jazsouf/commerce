@@ -377,7 +377,9 @@ export type CallToAction = {
   _type: "callToAction";
   layout: "left" | "right";
   title: string;
-  portableText?: string;
+  portableText?: Array<{
+    _key: string;
+  } & InternationalizedArrayTextValue>;
   link?: Array<{
     _key: string;
   } & LinkInternal | {
@@ -487,7 +489,9 @@ export type Product = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "colorTheme";
   };
-  body?: PortableText;
+  body?: Array<{
+    _key: string;
+  } & InternationalizedArrayPortableTextSimpleValue>;
   store?: ShopifyProduct;
   seo?: Seo;
 };
@@ -518,26 +522,6 @@ export type ShopifyProduct = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "productVariant";
   }>;
-};
-
-export type Page = {
-  _id: string;
-  _type: "page";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title: string;
-  slug: Slug;
-  colorTheme?: {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "colorTheme";
-  };
-  showHero?: boolean;
-  hero?: Hero;
-  body?: PortableText;
-  seo?: Seo;
 };
 
 export type Home = {
@@ -618,24 +602,6 @@ export type Collection = {
   seo?: Seo;
 };
 
-export type Seo = {
-  _type: "seo";
-  title?: string;
-  description?: string;
-  image?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    _type: "image";
-  };
-};
-
 export type ShopifyCollection = {
   _type: "shopifyCollection";
   createdAt?: string;
@@ -652,6 +618,105 @@ export type ShopifyCollection = {
   } & CollectionRule>;
   disjunctive?: boolean;
   sortOrder?: string;
+};
+
+export type LinkExternal = {
+  _type: "linkExternal";
+  url: string;
+  newWindow?: boolean;
+};
+
+export type LinkEmail = {
+  _type: "linkEmail";
+  email?: string;
+};
+
+export type InternationalizedArrayPortableTextSimpleValue = {
+  _type: "internationalizedArrayPortableTextSimpleValue";
+  value?: PortableTextSimple;
+};
+
+export type InternationalizedArrayTextValue = {
+  _type: "internationalizedArrayTextValue";
+  value?: string;
+};
+
+export type InternationalizedArrayStringValue = {
+  _type: "internationalizedArrayStringValue";
+  value?: string;
+};
+
+export type InternationalizedArrayPortableTextSimple = Array<{
+  _key: string;
+} & InternationalizedArrayPortableTextSimpleValue>;
+
+export type InternationalizedArrayText = Array<{
+  _key: string;
+} & InternationalizedArrayTextValue>;
+
+export type InternationalizedArrayString = Array<{
+  _key: string;
+} & InternationalizedArrayStringValue>;
+
+export type TranslationMetadata = {
+  _id: string;
+  _type: "translation.metadata";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  translations?: Array<{
+    _key: string;
+  } & InternationalizedArrayReferenceValue>;
+  schemaTypes?: Array<string>;
+};
+
+export type InternationalizedArrayReferenceValue = {
+  _type: "internationalizedArrayReferenceValue";
+  value?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "page";
+  };
+};
+
+export type Page = {
+  _id: string;
+  _type: "page";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title: string;
+  slug: Slug;
+  language?: string;
+  colorTheme?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "colorTheme";
+  };
+  showHero?: boolean;
+  hero?: Hero;
+  body?: PortableText;
+  seo?: Seo;
+};
+
+export type Seo = {
+  _type: "seo";
+  title?: string;
+  description?: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
 };
 
 export type Hero = {
@@ -681,16 +746,9 @@ export type ColorTheme = {
   background: Color;
 };
 
-export type LinkExternal = {
-  _type: "linkExternal";
-  url: string;
-  newWindow?: boolean;
-};
-
-export type LinkEmail = {
-  _type: "linkEmail";
-  email?: string;
-};
+export type InternationalizedArrayReference = Array<{
+  _key: string;
+} & InternationalizedArrayReferenceValue>;
 
 export type Color = {
   _type: "color";
@@ -843,5 +901,5 @@ export type SanityAssetSourceData = {
   url?: string;
 };
 
-export type AllSanitySchemaTypes = PortableTextSimple | PortableText | Settings | Spot | ProxyString | ProductVariant | ShopifyProductVariant | ProductReference | ProductHotspots | Products | PriceRange | PlaceholderString | Option | NotFoundPage | Menu | MenuLinks | Inventory | Instagram | ImageWithProductHotspots | ImageFeature | Images | ImageCallToAction | Grid | GridItem | FooterSettings | CustomProductOptionSize | CustomProductOptionSizeObject | CustomProductOptionColor | CustomProductOptionColorObject | CollectionRule | CollectionReference | CollectionLinks | CollectionGroup | CallToAction | Callout | Accordion | AccordionGroup | LinkProduct | ProductWithVariant | LinkInternal | Product | ShopifyProduct | Page | Home | Collection | Seo | ShopifyCollection | Hero | ColorTheme | LinkExternal | LinkEmail | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
+export type AllSanitySchemaTypes = PortableTextSimple | PortableText | Settings | Spot | ProxyString | ProductVariant | ShopifyProductVariant | ProductReference | ProductHotspots | Products | PriceRange | PlaceholderString | Option | NotFoundPage | Menu | MenuLinks | Inventory | Instagram | ImageWithProductHotspots | ImageFeature | Images | ImageCallToAction | Grid | GridItem | FooterSettings | CustomProductOptionSize | CustomProductOptionSizeObject | CustomProductOptionColor | CustomProductOptionColorObject | CollectionRule | CollectionReference | CollectionLinks | CollectionGroup | CallToAction | Callout | Accordion | AccordionGroup | LinkProduct | ProductWithVariant | LinkInternal | Product | ShopifyProduct | Home | Collection | ShopifyCollection | LinkExternal | LinkEmail | InternationalizedArrayPortableTextSimpleValue | InternationalizedArrayTextValue | InternationalizedArrayStringValue | InternationalizedArrayPortableTextSimple | InternationalizedArrayText | InternationalizedArrayString | TranslationMetadata | InternationalizedArrayReferenceValue | Page | Seo | Hero | ColorTheme | InternationalizedArrayReference | Color | RgbaColor | HsvaColor | HslaColor | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageHotspot | SanityImageCrop | SanityFileAsset | SanityImageAsset | SanityImageMetadata | Geopoint | Slug | SanityAssetSourceData;
 export declare const internalGroqTypeReferenceTo: unique symbol;
