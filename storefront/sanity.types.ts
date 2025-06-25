@@ -574,6 +574,7 @@ export type Collection = {
   hidden?: string;
   titleProxy?: ProxyString;
   slugProxy?: ProxyString;
+  slug?: Slug;
   colorTheme?: {
     _ref: string;
     _type: "reference";

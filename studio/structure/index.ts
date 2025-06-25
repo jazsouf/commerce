@@ -32,6 +32,7 @@ const hiddenDocTypes = (listItem: ListItemBuilder) => {
     "colorTheme",
     "home",
     "media.tag",
+    "translation.metadata",
     "page",
     "product",
     "productVariant",
@@ -55,13 +56,13 @@ export const structure: StructureResolver = (S, context) =>
       settings(S, context),
       S.divider(),
       ...S.documentTypeListItems().filter(hiddenDocTypes),
-      ...S.documentTypeListItems().filter((listItem) => {
-        if (["locale"].includes(listItem.getId()!)) {
-          //check if is Admin
-          return !!context?.currentUser?.roles.some(
-            (role) => role.name === "administrator",
-          );
-        }
-        return true;
-      }),
+      // ...S.documentTypeListItems().filter((listItem) => {
+      //   if (["locale"].includes(listItem.getId()!)) {
+      //     //check if is Admin
+      //     return !!context?.currentUser?.roles.some(
+      //       (role) => role.name === "administrator",
+      //     );
+      //   }
+      //   return true;
+      // }),
     ]);

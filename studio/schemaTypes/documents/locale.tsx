@@ -4,6 +4,7 @@ import { defineField, defineType } from "sanity";
 
 export const localeType = defineType({
   name: "locale",
+  title: "Translations",
   icon: TranslateIcon,
   type: "document",
   fields: [
